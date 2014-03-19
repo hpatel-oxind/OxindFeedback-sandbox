@@ -1,0 +1,7 @@
+parameters:
+#    oxind_user.example.class: Oxind\UserBundle\Example
+
+services:
+#    oxind_user.example:
+#        class: %oxind_user.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

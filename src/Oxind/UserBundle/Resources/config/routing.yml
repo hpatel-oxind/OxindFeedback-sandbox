@@ -1,0 +1,3 @@
+oxind_user_annotation:
+    resource: "@OxindUserBundle/Controller"
+    type:     annotation

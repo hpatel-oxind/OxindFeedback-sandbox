@@ -1,0 +1,3 @@
+oxind_dashboard_annotation:
+    resource: "@OxindDashboardBundle/Controller"
+    type:     annotation

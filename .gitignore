@@ -1,0 +1,15 @@
+app/cache/
+app/config/parameters.yml
+vendor/
+web/bundles/
+src/Application/
+nbproject/
+composer.lock
+bin/
+app/logs/
+app/Application/
+UPGRADE-2.2.md
+UPGRADE-2.3.md
+UPGRADE-2.4.md
+.travis.yml
+UPGRADE.md

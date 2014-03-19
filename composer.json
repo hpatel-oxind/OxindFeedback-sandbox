@@ -19,17 +19,22 @@
         "sensio/framework-extra-bundle": "~3.0",
         "sensio/generator-bundle": "~2.3",
         "incenteev/composer-parameter-handler": "~2.0",
-        
         "knplabs/knp-menu-bundle": "1.1.x-dev",
         "sonata-project/core-bundle": "~2.2@dev",
         "sonata-project/block-bundle": "~2.2@dev",
         "sonata-project/jquery-bundle": "1.8.*",
         "sonata-project/user-bundle": "~2.2@dev",
-        "sonata-project/admin-bundle": "dev-master",
+        "sonata-project/admin-bundle": "2.3.*@dev",
         "sonata-project/doctrine-orm-admin-bundle": "dev-master",
-        "sonata-project/doctrine-extensions": "1.*"
-        
+        "sonata-project/doctrine-extensions": "1.*",
+        "oxind/feedback": "dev-master",
+        "twbs/bootstrap": "~3.0@dev"
+
     },
+    "repositories": [{
+            "type": "vcs",
+            "url": "https://github.com/Oxind/OxindFeedbackBundle.git"
+        }],
     "scripts": {
         "post-install-cmd": [
             "Incenteev\\ParameterHandler\\ScriptHandler::buildParameters",

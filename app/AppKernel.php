@@ -29,9 +29,9 @@ class AppKernel extends Kernel
             new Oxind\UserBundle\OxindUserBundle(),
             new FOS\UserBundle\FOSUserBundle(),
             new Sonata\UserBundle\SonataUserBundle("FOSUserBundle"),
-            new Oxind\FeedbackBundle\OxindFeedbackBundle(),
             new Application\Sonata\UserBundle\ApplicationSonataUserBundle(),
             new Oxind\DashboardBundle\OxindDashboardBundle(),
+            new Oxind\FeedbackBundle\OxindFeedbackBundle()
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test')))

@@ -28,8 +28,7 @@ class AppKernel extends Kernel
             new Sonata\DoctrineORMAdminBundle\SonataDoctrineORMAdminBundle(),
             new Oxind\UserBundle\OxindUserBundle(),
             new FOS\UserBundle\FOSUserBundle(),
-            new Sonata\UserBundle\SonataUserBundle("FOSUserBundle"),
-            new Application\Sonata\UserBundle\ApplicationSonataUserBundle(),
+            new Sonata\UserBundle\SonataUserBundle("FOSUserBundle"),            
             new Oxind\DashboardBundle\OxindDashboardBundle(),
             new Oxind\FeedbackBundle\OxindFeedbackBundle()
         );

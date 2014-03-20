@@ -1,4 +1,4 @@
 oxind_dashboard_annotation:
     resource: "@OxindDashboardBundle/Controller"
     type:     annotation
-    methods:  GET|POST
+    methods:  GET

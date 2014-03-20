@@ -1,0 +1,41 @@
+@charset "utf-8";
+/* CSS Document */
+
+.row {
+    margin-bottom: 10px;
+}
+.row .col-sm-12 > img {width:100%; max-width:100; position:relative; display:block;}
+.votecount{background-color: #FCFDFF;
+    border: 1px solid #CFD7E6;
+    border-radius: 3px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+    color: #8F9BB3;
+    font-size: 12px;
+    line-height: 14px;
+    margin-bottom: 3px;
+    padding: 12px 0 9px;
+    text-align: center;
+	margin-top:20px;}
+.votecount strong {
+    color: #292C33;
+    display: block;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+.idea-title{
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 1em;
+    margin-bottom: 10px;
+}
+.idea-description p{
+	font-size: 13px;
+    margin-bottom: 10px;
+}
+.idea-comment-count{ 
+  color: #666F80;
+  font-size: 11px;
+  margin-bottom: 0;
+  margin-top: 10px;
+}

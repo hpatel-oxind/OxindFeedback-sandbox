@@ -18,6 +18,13 @@ class Configuration implements ConfigurationInterface
     public function getConfigTreeBuilder()
     {
         $treeBuilder = new TreeBuilder();
+        $rootNode = $treeBuilder->root('oxind_dashboard');
+        
+        // simple configuration to avoid unused variables
+        $rootNode
+                ->children()
+                ->scalarNode('twig')->end()
+            ->end();
         return $treeBuilder;
     }
 }

@@ -18,6 +18,12 @@ class Configuration implements ConfigurationInterface
     public function getConfigTreeBuilder()
     {
         $treeBuilder = new TreeBuilder();
+        $rootNode = $treeBuilder->root('oxind_user');
+        
+        $rootNode
+                ->children()
+                ->scalarNode('twig')->end()
+            ->end();
         return $treeBuilder;
     }
 }

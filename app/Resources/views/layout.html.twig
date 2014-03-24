@@ -1,0 +1,53 @@
+{# app/Resources/views/base.html.twig #}
+{% trans_default_domain 'app' %}
+{%- block html_tag %}
+<!DOCTYPE html>
+<html class="app" {% block html_attributes -%}{% endblock %}>
+{% endblock %}
+    {% block head_tag %}
+    <head {% block head_attributes -%}{% endblock %}>
+        {#{% block title %}
+            <title>{% block title_content %}{{ 'brand.name'|trans }}{% endblock %}</title>
+        {% endblock %}#}
+
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+        {% block metadatas %}
+            <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        {% endblock %}
+
+        {% block stylesheets %}
+            <link rel="icon" sizes="16x16" href="{{ asset('favicon.ico') }}" />
+            
+            {# Custom CSS starts here #}
+            <link rel="stylesheet" href="{{ asset('public/css/bootstrap.min.css') }}" />
+            <link rel="stylesheet" href="{{ asset('public/css/feedback-bundle-custom.css') }}" />
+            {# Custom CSS ends here #}
+        
+        {% endblock %}
+            
+        {% block head_javascripts %}
+           
+        {% endblock %}
+    </head>
+    {% endblock %}
+
+    {% block body_tag %}
+    <body {% block body_attributes -%}{% endblock %}>
+    {% endblock %}
+        <div class="container">    
+            {% block timeline %}
+                {% include ':includes:header.html.twig'  %}
+            {% endblock %}    
+            {% block content %}{% endblock %}
+
+            {% block javascripts %}
+                    <script type="text/javascript" src="{{ asset('public/js/jquery.min.js') }}"></script>
+                    <script type="text/javascript" src="{{ asset('public/js/bootstrap.min.js') }}"></script>
+            {% endblock %}
+            {% block footer %}
+                {% include ':includes:footer.html.twig'  %}
+            {% endblock %}
+        </div>
+    </body>
+</html>

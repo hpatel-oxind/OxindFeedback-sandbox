@@ -2,6 +2,7 @@ imports:
     - { resource: parameters.yml }
     - { resource: security.yml }
     - { resource: include/fos.yml }        
+    - { resource: include/oxind_feedback.yml }        
     - { resource: include/sonata/block.yml }    
     #- { resource: include/sonata/admin.yml }        
     - { resource: include/sonata/user.yml }    

@@ -31,6 +31,64 @@ class User extends BaseUser
      */
     protected $groups;
 
+     /**
+     * @ORM\OneToMany(targetEntity="Oxind\DashboardBundle\Entity\Feedback", mappedBy="user")
+     * @ORM\JoinColumn(name="creator_id", referencedColumnName="id", nullable=false)
+     */
+    protected $feedbacks;
+
+    /**
+     * @ORM\OneToMany(targetEntity="Oxind\DashboardBundle\Entity\Vote", mappedBy="user")
+     * @ORM\JoinColumn(name="user_id", referencedColumnName="id", nullable=false)
+     */
+    protected $votes;
+
+    
+      /**
+     * Add Feedback entity to collection (one to many).
+     *
+     * @param \Entity\Feedback $feedback
+     * @return \Entity\User
+     */
+    public function addFeedback(Feedback $feedback)
+    {
+        $this->feedbacks[] = $feedback;
+
+        return $this;
+    }
+
+    /**
+     * Get Feedback entity collection (one to many).
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getFeedbacks()
+    {
+        return $this->feedbacks;
+    }
+
+    /**
+     * Add Vote entity to collection (one to many).
+     *
+     * @param \Entity\Vote $vote
+     * @return \Entity\User
+     */
+    public function addVote(Vote $vote)
+    {
+        $this->votes[] = $vote;
+
+        return $this;
+    }
+
+    /**
+     * Get Vote entity collection (one to many).
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getVotes()
+    {
+        return $this->votes;
+    }
     /**
      * Constructor
      */

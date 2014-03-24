@@ -1,0 +1,3 @@
+oxind_feedback:
+    db_driver: orm
+    user_class: Oxind\UserBundle\Entity\User

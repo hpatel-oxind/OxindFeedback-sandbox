@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+    <parameters>
+        <parameter key="oxind_feedback.admin.feebacktype.class">Oxind\DashboardBundle\Admin\FeedbackTypeAdmin</parameter>
+        <parameter key="oxind_feedback.entity.feebacktype.class">Oxind\DashboardBundle\Entity\FeedbackType</parameter>
+
+        <parameter key="oxind_feedback.admin.feeback.class">Oxind\DashboardBundle\Admin\FeedbackAdmin</parameter>
+        <parameter key="oxind_feedback.entity.feeback.class">Oxind\DashboardBundle\Entity\Feedback</parameter>        
+        
+    </parameters>
+    
+    <services>        
+        <service id="oxind_feedback.admin.feebacktype" class="%oxind_feedback.admin.feebacktype.class%">
+            <tag name="sonata.admin" manager_type="orm" label="Feedback Type" label_catalogue="SonataDashboardBundle" label_translator_strategy="sonata.admin.label.strategy.underscore" />
+            <argument />
+            <argument>%oxind_feedback.entity.feebacktype.class%</argument>
+            <argument />
+        </service>
+
+        
+        <service id="oxind_feedback.admin.feeback" class="%oxind_feedback.admin.feeback.class%">
+            <tag name="sonata.admin" manager_type="orm" label="Feedback" label_catalogue="SonataDashboardBundle" label_translator_strategy="sonata.admin.label.strategy.underscore" />
+            <argument />
+            <argument>%oxind_feedback.entity.feeback.class%</argument>
+            <argument />
+        </service>        
+    </services>
+</container>

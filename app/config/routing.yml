@@ -1,6 +1,9 @@
 oxind_dashboard:
     resource: "@OxindDashboardBundle/Resources/config/routing.yml"
     prefix:  /
+oxind_feedback:
+    resource: "@OxindFeedbackBundle/Resources/config/routing.yml"
+    prefix:  /
 
 oxind_user:
     resource: "@OxindUserBundle/Resources/config/routing.yml"

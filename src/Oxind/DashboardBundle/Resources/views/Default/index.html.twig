@@ -53,7 +53,7 @@
             <div class="row">
                 {% block leftcontent %}
                     
-                {{ render(controller('OxindFeedbackBundle:Feedback:getFeedbackForm', {'feedbacktype_id' : 1 } )) }}
+                {{ render(controller('OxindFeedbackBundle:Feedback:listFeedback')) }}
                                 
                 {% endblock %}
                     {% block rightcontent %}

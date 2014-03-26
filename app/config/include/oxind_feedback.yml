@@ -4,3 +4,4 @@ oxind_feedback:
     class:
         model:
             feedback: Oxind\DashboardBundle\Entity\Feedback
+            feedbacktype: Oxind\DashboardBundle\Entity\FeedbackType

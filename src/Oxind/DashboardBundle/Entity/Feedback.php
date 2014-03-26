@@ -43,5 +43,10 @@ class Feedback extends BaseFeedback
      * @ORM\JoinColumn(name="creator_id", referencedColumnName="id", nullable=false)
      */
     protected $user;
+    
+    public function getAuthorName()
+    {
+        return $this->user->getFullname();
+    }
 
 }

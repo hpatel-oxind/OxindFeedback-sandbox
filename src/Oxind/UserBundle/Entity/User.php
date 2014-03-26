@@ -6,6 +6,8 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Sonata\UserBundle\Entity\BaseUser as BaseUser;
 use Doctrine\ORM\Mapping AS ORM;
 use FOS\UserBundle\Model\GroupInterface;
+use Oxind\FeedbackBundle\Model\VoteInterface;
+use Oxind\FeedbackBundle\Model\FeedbackInterface;
 
 /**
  * @ORM\Entity
@@ -50,7 +52,7 @@ class User extends BaseUser
      * @param \Entity\Feedback $feedback
      * @return \Entity\User
      */
-    public function addFeedback(Feedback $feedback)
+    public function addFeedback(FeedbackInterface $feedback)
     {
         $this->feedbacks[] = $feedback;
 
@@ -73,7 +75,7 @@ class User extends BaseUser
      * @param \Entity\Vote $vote
      * @return \Entity\User
      */
-    public function addVote(Vote $vote)
+    public function addVote(VoteInterface $vote)
     {
         $this->votes[] = $vote;
 

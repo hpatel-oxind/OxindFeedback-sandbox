@@ -1,3 +1,6 @@
 oxind_feedback:
     db_driver: orm
     user_class: Oxind\UserBundle\Entity\User
+    class:
+        model:
+            feedback: Oxind\DashboardBundle\Entity\Feedback

@@ -3,6 +3,7 @@
        
         <div class="row">
                 {% block title %}
+            
                 <div class="col-lg-8">
                     <h3> Title </h3>
                 </div>
@@ -51,103 +52,10 @@
 
             <div class="row">
                 {% block leftcontent %}
-                    <div class="col-sm-8">
-                        <ul class="nav nav-tabs">
-                            <li class="active"><a data-toggle="tab" href="#hotideas">Hot Ideas</a></li>
-                            <li><a data-toggle="tab" href="#topideas">Top Ideas</a></li>
-                            <li><a data-toggle="tab" href="#newideas">New Ideas</a></li>
-                        </ul>
-                        <div class="tab-content"> 
-                            <div id="hotideas" class="tab-pane active">
-
-                                <div class="row">
-                                    <div class="col-sm-2">
-                                        <div class="votecount">
-                                            <strong>10</strong>
-                                            <span>votes</span>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-10">
-                                        <h2 class="idea-title">title</h2>
-                                        <div class="idea-description">
-                                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. 
-                                            </p>
-                                            <p>It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum
-                                            </p>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-sm-4 pull-left">
-                                                <div class="idea-comment-count">
-                                                    0 comment
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-5 pull-left">
-                                                <div class="idea-comment-count text-right">
-                                                    Give Your Vote:
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-3 pull-left">
-                                                <form role="form">              
-                                                    <div class="form-group">
-                                                        <div class="controls">
-
-                                                            <div data-toggle="buttons">
-
-                                                                <label class="btn btn-default">
-                                                                    <input type="radio" name="test">
-                                                                    1
-                                                                </label>
-
-                                                                <label class="btn btn-default">
-                                                                    <input type="radio" name="test">
-                                                                    2
-                                                                </label>
-
-                                                                <label class="btn btn-default">
-                                                                    <input type="radio" name="test">
-                                                                    3
-                                                                </label>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </form>              
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="row">
-                                    <div class="col-sm-2">
-                                        <div class="votecount">
-                                            <strong>10</strong>
-                                            <span>votes</span>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-10">
-                                        <h2 class="idea-title">title</h2>
-                                        <div class="idea-description">
-                                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. 
-                                            </p>
-                                            <p>It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum
-                                            </p>
-                                        </div>
-                                        <div class="idea-comment-count">
-                                            0 comment
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-                            <div id="topideas" class="tab-pane">
-                                Top ideas
-                            </div>
-                            <div id="newideas" class="tab-pane">
-                                New ideas
-                            </div>
-                        </div>
-                    </div>
-                    {% endblock %}
+                    
+                {{ render(controller('OxindFeedbackBundle:Feedback:getFeedbackForm', {'feedbacktype_id' : 1 } )) }}
+                                
+                {% endblock %}
                     {% block rightcontent %}
                     <div class="col-sm-4">  
                         <section class="panel panel-default">
@@ -215,4 +123,3 @@
             </script>
             
 {% endblock %}
-

@@ -1,0 +1,22 @@
+{% extends 'SonataAdminBundle:CRUD:base_show_field.html.twig' %}
+
+{% trans_default_domain 'admin' %}
+
+{% block field%}
+<ul class="sonata-ba-show-one-to-many">
+
+    <tr>
+        <th>{{ 'feedback.labels.username'|trans }}</th>
+        <th>{{ 'feedback.labels.votes'|trans }}</th>
+    </tr>
+
+
+    {% for element in value%}
+    <tr>
+        <td>{{ element.user|render_relation_element(field_description) }}</td>
+        <td>{{ element.points|render_relation_element(field_description) }}</td>
+    </tr>
+    {% endfor %}
+
+</ul>
+{% endblock %}

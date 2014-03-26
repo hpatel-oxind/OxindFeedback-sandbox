@@ -50,7 +50,7 @@ class User extends BaseUser
      * @param \Entity\Feedback $feedback
      * @return \Entity\User
      */
-    public function addFeedback(Feedback $feedback)
+    public function addFeedback(\Oxind\FeedbackBundle\Model\FeedbackInterface $feedback)
     {
         $this->feedbacks[] = $feedback;
 
@@ -73,7 +73,7 @@ class User extends BaseUser
      * @param \Entity\Vote $vote
      * @return \Entity\User
      */
-    public function addVote(Vote $vote)
+    public function addVote(\Oxind\FeedbackBundle\Model\VoteInterface $vote)
     {
         $this->votes[] = $vote;
 

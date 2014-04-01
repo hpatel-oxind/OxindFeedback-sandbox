@@ -41,7 +41,6 @@ class User extends BaseUser
 
     /**
      * @ORM\OneToMany(targetEntity="Oxind\DashboardBundle\Entity\Vote", mappedBy="user")
-     * @ORM\JoinColumn(name="user_id", referencedColumnName="id", nullable=false)
      */
     protected $votes;
 

@@ -25,8 +25,7 @@ use Oxind\FeedbackBundle\Entity\FeedbackType as BaseFeedbackType;
 class FeedbackType extends BaseFeedbackType
 {
     /**
-     * @ORM\OneToMany(targetEntity="Feedback", mappedBy="feedbackType")
-     * @ORM\JoinColumn(name="type_id", referencedColumnName="id", nullable=false)
+     * @ORM\OneToMany(targetEntity="Feedback", mappedBy="feedbackType")     
      */
     protected $feedbacks;
 }

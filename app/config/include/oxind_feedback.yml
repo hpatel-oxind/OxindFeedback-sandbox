@@ -5,3 +5,4 @@ oxind_feedback:
         model:
             feedback: Oxind\DashboardBundle\Entity\Feedback
             feedbacktype: Oxind\DashboardBundle\Entity\FeedbackType
+            vote: Oxind\DashboardBundle\Entity\Vote

@@ -15,7 +15,7 @@ use Oxind\FeedbackBundle\Entity\Feedback as BaseFeedback;
  * Description of Feedback
  *
  * @ORM\Entity
- * @ORM\Table(name="feedback", indexes={@ORM\Index(name="type_id", columns={"type_id"}), @ORM\Index(name="creator_id", columns={"creator_id"}), @ORM\Index(name="type_id_2", columns={"type_id"}), @ORM\Index(name="creator_id_2", columns={"creator_id"})})
+ * @ORM\Table(name="feedback")
  */
 class Feedback extends BaseFeedback
 {
@@ -26,9 +26,8 @@ class Feedback extends BaseFeedback
      */
     protected $feedbackDisplays;
 
-    /**
+    /** 
      * @ORM\OneToMany(targetEntity="Vote", mappedBy="feedback")
-     * @ORM\JoinColumn(name="feedback_id", referencedColumnName="id", nullable=false)
      */
     protected $votes;
 

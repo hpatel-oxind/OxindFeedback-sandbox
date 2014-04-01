@@ -12,104 +12,21 @@
 
                 {% block signin %}
                 <div class="col-sm-4">
-                    New and returning users may <a href="#signIn" data-toggle="modal">Sign In</a>
-                    <div class="bs-example">
-                        <!-- Modal HTML -->
-                        <div id="signIn" class="modal fade">
-                            <div class="modal-dialog">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                                        <h4 class="modal-title">Sign In</h4>
-                                    </div>
-                                    <div class="modal-body">
-                                        <form role="form">
-                                            <div class="form-group">
-                                                <label>User Name</label>
-                                                <div class="controls">
-                                                    <input type="text" class="form-control" placeholder="User Name">
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <label> Email </label>
-                                                <div class="controls">
-                                                    <input type="email" class="form-control" placeholder="Enter email">
-                                                </div>
-                                            </div>
-                                            <button type="submit" class="btn btn-sm btn-default">Sign In</button>
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- End Model HTML -->
-                    </div>     
-                    <!--Sign in form end-->
-
+                    New and returning users may <a href="{{ path('fos_user_security_login')}}" data-toggle="modal">Sign In</a>
                 </div>
                 {% endblock %}
             </div>  
 
-            <div class="row">
-                {% block leftcontent %}
-                    
+            <div class="container">
+                {% block feedbackcontent %}
+                   
                 {{ render(controller('OxindFeedbackBundle:Feedback:listFeedback')) }}
-                                
                 {% endblock %}
-                    {% block rightcontent %}
-                    <div class="col-sm-4">  
-                        <section class="panel panel-default">
-                            <header class="panel-heading font-bold">Post your Ideas & Suggestions</header>
-                            <div class="panel-body">
-                                <form role="form">
-                                    <div class="form-group">
-                                        <label>Suggestion Title</label>
-                                        <input type="text" class="form-control" placeholder="Enter Idea">
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label>Description</label>
-                                        <textarea class="form-control" name="idea_description" id="idea_description" placeholder="Describe Your Idea...(Optional)"></textarea>
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label>Number of Votes</label>
-
-
-                                        <div class="controls">
-                                            <div data-toggle="buttons">
-                                                <label class="btn btn-default">
-                                                    <input type="radio" name="test">
-                                                    1
-                                                </label>
-
-                                                <label class="btn btn-default">
-                                                    <input type="radio" name="test">
-                                                    2
-                                                </label>
-
-                                                <label class="btn btn-default">
-                                                    <input type="radio" name="test">
-                                                    3
-                                                </label>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label> Email </label>
-                                        <div class="controls">
-                                            <input type="email" class="form-control" placeholder="Enter email">
-                                        </div>
-                                    </div>
-                                    <button type="submit" class="btn btn-sm btn-default">Post Idea</button>
-                                    <button type="reset" class="btn btn-sm btn-default">Cancel</button>
-                                </form>
-                            </div>
-                        </section>
-                    </div>
-                    {% endblock %}
-                </div>
+                {% block feedbackform %}
+                {{ render(controller('OxindFeedbackBundle:Feedback:getFeedbackForm' , {'feedbacktype_id' : 1})) }}                       
+                {% endblock %}
+                    
+            </div>
             
 
             <script type="text/javascript">

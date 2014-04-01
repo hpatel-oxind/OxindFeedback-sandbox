@@ -14,12 +14,14 @@ class Vote extends BaseVote
 {
 
     /**
-     * @ORM\Id
-     * @ORM\ManyToOne(targetEntity="Oxind\UserBundle\Entity\User", inversedBy="votes")
-     * @ORM\JoinColumn(name="user_id", referencedColumnName="id", nullable=false)
+     * @ORM\ManyToOne(targetEntity="Oxind\UserBundle\Entity\User", inversedBy="votes") 
      */
     protected $user;
-    
-    
 
+    
+    /** 
+     * @ORM\ManyToOne(targetEntity="feedback", inversedBy="votes")
+     */
+    protected $feedback;
+    
 }

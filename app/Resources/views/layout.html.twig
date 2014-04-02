@@ -42,13 +42,14 @@
             {% endblock %}    
             {% block content %}{% endblock %}
 
-            {% block javascripts %}
-                    <script type="text/javascript" src="{{ asset('public/js/jquery.min.js') }}"></script>
-                    <script type="text/javascript" src="{{ asset('public/js/bootstrap.min.js') }}"></script>
-            {% endblock %}
+            
             {% block footer %}
                 {% include ':includes:footer.html.twig'  %}
             {% endblock %}
         </div>
+        {% block javascripts %}
+                    <script type="text/javascript" src="{{ asset('public/js/jquery.min.js') }}"></script>
+                    <script type="text/javascript" src="{{ asset('public/js/bootstrap.min.js') }}"></script>
+        {% endblock %}
     </body>
 </html>

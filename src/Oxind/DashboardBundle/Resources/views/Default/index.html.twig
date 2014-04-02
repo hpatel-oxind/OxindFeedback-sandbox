@@ -19,24 +19,20 @@
 
             <div class="container">
                 {% block feedbackcontent %}
-                   
-                {{ render(controller('OxindFeedbackBundle:Feedback:listFeedback')) }}
+                {{ include ('OxindFeedbackBundle:Feedback:feedback_search_form.html.twig', { 'feedbacktype_id': 1} ) }}
+                
+                {{ render(controller('OxindFeedbackBundle:Feedback:listFeedback', {'feedbacktype_id' : 1 })) }}
                 {% endblock %}
                 {% block feedbackform %}
                 {{ render(controller('OxindFeedbackBundle:Feedback:getFeedbackForm' , {'feedbacktype_id' : 1})) }}                       
                 {% endblock %}
                     
             </div>
-            
 
-            <script type="text/javascript">
-                $(function() {
-                    $('label input[type="checkbox"], label input[type="radio"]').on('click', function() {
-                        $('label input[type="checkbox"], label input[type="radio"]').each(function() {
-                            $(this).is(':checked') ? $(this).parent().addClass('active') : $(this).parent().removeClass('active');
-                        })
-                    })
-                })
-            </script>
             
+{% endblock %}
+
+{% block javascripts %}
+{{ parent() }}
+<script src="{{ asset('bundles/oxindfeedback/js/search.js') }}" type="text/javascript"  ></script>
 {% endblock %}

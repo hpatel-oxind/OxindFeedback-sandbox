@@ -20,13 +20,13 @@ use Oxind\FeedbackBundle\Entity\Feedback as BaseFeedback;
 class Feedback extends BaseFeedback
 {
 
-/**
+    /**
      * @ORM\OneToMany(targetEntity="FeedbackDisplay", mappedBy="feedback")
      * @ORM\JoinColumn(name="feedback_id", referencedColumnName="id", nullable=false)
      */
     protected $feedbackDisplays;
 
-    /** 
+    /**
      * @ORM\OneToMany(targetEntity="Vote", mappedBy="feedback")
      */
     protected $votes;
@@ -42,7 +42,7 @@ class Feedback extends BaseFeedback
      * @ORM\JoinColumn(name="creator_id", referencedColumnName="id", nullable=false)
      */
     protected $user;
-    
+
     public function getAuthorName()
     {
         return $this->user->getFullname();

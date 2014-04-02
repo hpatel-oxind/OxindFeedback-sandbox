@@ -3,6 +3,7 @@
 use Symfony\Component\HttpKernel\Kernel;
 use Symfony\Component\Config\Loader\LoaderInterface;
 
+
 class AppKernel extends Kernel
 {
 
@@ -31,7 +32,8 @@ class AppKernel extends Kernel
             new Sonata\UserBundle\SonataUserBundle("FOSUserBundle"),
             
             new Oxind\DashboardBundle\OxindDashboardBundle(),
-            new Oxind\FeedbackBundle\OxindFeedbackBundle()
+            new Oxind\FeedbackBundle\OxindFeedbackBundle(),
+            new Doctrine\Bundle\FixturesBundle\DoctrineFixturesBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test')))

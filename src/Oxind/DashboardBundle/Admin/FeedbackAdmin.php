@@ -39,7 +39,7 @@ class FeedbackAdmin extends Admin
         $list->add('content', null, array('label' => 'feedback.content'));
 
         $list->add(
-            'feedbackType.statuses', null, array(
+            'status', null, array(
             'editable' => true,
             'inline' => true,
             'template' => 'OxindDashboardBundle:Admin:custom_list_status.html.twig',
@@ -80,20 +80,11 @@ class FeedbackAdmin extends Admin
      */
     protected function configureFormFields(FormMapper $formMapper)
     {
-
         $formMapper->with('feedbacktype.title')
                 ->add('title', null, array('label' => 'feedbacktype.name'))
                 ->add('content', 'text', array('label' => 'feedback.type'))
-                ->add('feedbackType.statuses', 'text', array('label' => 'feedback.type'))
+                ->add('status', null, array('label' => 'feedback.type'))
                 ->end();
-    }
-    
-public function preUpdate($feedback)
-    {
-        foreach($feedback->getId() as $feedbackType)
-        {
-            $feedbackType->setFeedbackType($feedback);
-        }
     }
 }
 

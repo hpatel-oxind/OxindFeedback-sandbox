@@ -1,5 +1,17 @@
-<td>
-{% for element in value%}
-{{ element }}<br>    
-{% endfor %}
-</td>
+{% extends 'SonataAdminBundle:CRUD:base_list_field.html.twig' %}
+
+{# for editable fields #}
+{% block field_span_attributes %}
+    {% spaceless %}
+        {{ parent() }}
+        
+        data-source="[{value: 0, text: 'open'},{value: 1, text: 'close'},{value: 2, text: 'rejected'}]"
+    {% endspaceless %}
+{% endblock %}
+        
+{# to show field value #}
+{% block field %}
+{% spaceless %}
+ <span class="label label-success">open</span>  
+{% endspaceless %}
+{% endblock %}

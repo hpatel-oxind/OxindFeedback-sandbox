@@ -39,8 +39,8 @@ class FeedbackTypeAdmin extends Admin
     protected function configureListFields(ListMapper $list)
     {
         $list->addIdentifier('name', null, array('label' => 'feedbacktype.name'));
-        $list->add('statuses', null, array('editable' => true, 'label' => 'feedbacktype.statuses', 'template' => 'OxindDashboardBundle:Admin:custom_list_status.html.twig'));
-        $list->add('votable', null, array('editable' => true, 'inline' => true, 'template' => 'OxindDashboardBundle:Admin:custom_list_votable.html.twig', 'label' => 'feedbacktype.voteable',));
+        $list->add('statuses', null, array( 'label' => 'feedbacktype.statuses'));
+        $list->add('votable', null, array('editable' => true, 'template' => 'OxindDashboardBundle:Admin:custom_list_votable.html.twig', 'label' => 'feedbacktype.voteable',));
         $list->add('vote_min_point', null, array('editable' => true, 'inline' => true, 'label' => 'feedbacktype.vote_min_points'));
         $list->add('vote_max_point', null, array('editable' => true, 'inline' => true, 'label' => 'feedbacktype.vote_max_points'));
     }
@@ -56,8 +56,6 @@ class FeedbackTypeAdmin extends Admin
                 ->add('name', null, array('label' => 'feedbacktype.name'))
                 ->add('statuses', 'choice', array('multiple' => true, 'choices' => $this->getFeedbackTypeStatuses(), 'expanded' => true, 'multiple' => true))
                 ->add('votable', null, array('label' => 'feedbacktype.votable'))
-                ->add('vote_min_point', null, array('label' => 'feedbacktype.vote_min_point'))
-                ->add('vote_max_point', null, array('label' => 'feedbacktype.vote_max_point'))
                 ->end();
     }
 

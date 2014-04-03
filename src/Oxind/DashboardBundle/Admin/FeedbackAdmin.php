@@ -6,6 +6,7 @@ use Sonata\AdminBundle\Admin\Admin;
 use Sonata\AdminBundle\Route\RouteCollection;
 use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Show\ShowMapper;
+use Sonata\AdminBundle\Form\FormMapper;
 
 /**
  * Description of FeedbackAdmin
@@ -38,8 +39,9 @@ class FeedbackAdmin extends Admin
         $list->add('content', null, array('label' => 'feedback.content'));
 
         $list->add(
-                'status', null, array(
+            'feedbackType.statuses', null, array(
             'editable' => true,
+            'inline' => true,
             'template' => 'OxindDashboardBundle:Admin:custom_list_status.html.twig',
             'label' => 'feedback.status'
                 )
@@ -71,6 +73,27 @@ class FeedbackAdmin extends Admin
                 )
                 ->end();
     }
+    
+    /**
+     * Function to render edit fields in edit page
+     * @param \Oxind\AdminBundle\Admin\FormMapper $formMapper
+     */
+    protected function configureFormFields(FormMapper $formMapper)
+    {
 
+        $formMapper->with('feedbacktype.title')
+                ->add('title', null, array('label' => 'feedbacktype.name'))
+                ->add('content', 'text', array('label' => 'feedback.type'))
+                ->add('feedbackType.statuses', 'text', array('label' => 'feedback.type'))
+                ->end();
+    }
+    
+public function preUpdate($feedback)
+    {
+        foreach($feedback->getId() as $feedbackType)
+        {
+            $feedbackType->setFeedbackType($feedback);
+        }
+    }
 }
 

@@ -1,8 +1,10 @@
 oxind_feedback:
     db_driver: orm
     user_class: Oxind\UserBundle\Entity\User
+    fixtures: Oxind\DashboardBundle\DataFixtures\Fixtures 
     class:
         model:
             feedback: Oxind\DashboardBundle\Entity\Feedback
             feedbacktype: Oxind\DashboardBundle\Entity\FeedbackType
             vote: Oxind\DashboardBundle\Entity\Vote
+            

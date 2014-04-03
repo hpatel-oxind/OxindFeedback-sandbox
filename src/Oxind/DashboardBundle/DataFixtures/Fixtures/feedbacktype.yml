@@ -1,0 +1,20 @@
+# /src/YourNameSpace/YourBundle/Datafixtures/Fixtures/feedbacktype.yml
+feedbacktypes:
+    suggestion:
+        statuses:
+            - open
+            - close
+            - accepted
+            - rejected
+        votable: 1   #boolean value (1 or 0)
+        vote_min_point: 1  # int value (from 1 to 10)
+        vote_max_point: 5  # int value (from 1 to 10)    
+    issue:
+        statuses:
+            - open
+            - close
+            - accepted
+            - rejected
+        votable: 0   #boolean value (1 or 0)
+        vote_min_point: 2  # int value (from 1 to 10)
+        vote_max_point: 7  # int value (from 1 to 10)   

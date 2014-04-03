@@ -38,7 +38,7 @@ class FeedbackAdmin extends Admin
         $list->add('content', null, array('label' => 'feedback.content'));
 
         $list->add(
-                'status', null, array(
+                'feedbackType.statuses', null, array(
             'editable' => true,
             'template' => 'OxindDashboardBundle:Admin:custom_list_status.html.twig',
             'label' => 'feedback.status'

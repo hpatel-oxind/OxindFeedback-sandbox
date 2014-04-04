@@ -32,8 +32,9 @@ class AppKernel extends Kernel
             new Sonata\UserBundle\SonataUserBundle("FOSUserBundle"),
             
             new Oxind\DashboardBundle\OxindDashboardBundle(),
-            new Oxind\FeedbackBundle\OxindFeedbackBundle(),
             new Doctrine\Bundle\FixturesBundle\DoctrineFixturesBundle(),
+            new Oxind\FeedbackBundle\OxindFeedbackBundle(),
+            
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test')))

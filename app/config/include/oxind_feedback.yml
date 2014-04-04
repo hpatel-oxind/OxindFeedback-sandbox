@@ -1,7 +1,7 @@
 oxind_feedback:
     db_driver: orm
     user_class: Oxind\UserBundle\Entity\User
-    fixtures: Oxind\DashboardBundle\DataFixtures\Fixtures 
+    fixtures: Oxind/DashboardBundle/DataFixtures/Fixtures 
     class:
         model:
             feedback: Oxind\DashboardBundle\Entity\Feedback

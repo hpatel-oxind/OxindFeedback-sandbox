@@ -19,7 +19,9 @@ class DefaultController extends Controller
      */
     public function indexAction()
     {
-        return $this->render('OxindDashboardBundle:Default:index.html.twig', array('name' => "Dashboard Page"));
+        $feedbackTypeManager = $this->get('oxind_feedback.manager.feedbacktype');
+        $feedbackType = $feedbackTypeManager->findFeedbackTypeBy(array( 'name' => 'suggestion' ));
+        return $this->render('OxindDashboardBundle:Default:index.html.twig', array('feedbacktype' => $feedbackType));
     }
 
 }

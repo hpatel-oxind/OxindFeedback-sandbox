@@ -21,8 +21,7 @@ class Feedback extends BaseFeedback
 {
 
     /**
-     * @ORM\OneToMany(targetEntity="FeedbackDisplay", mappedBy="feedback")
-     * @ORM\JoinColumn(name="feedback_id", referencedColumnName="id", nullable=false)
+     * @ORM\OneToMany(targetEntity="FeedbackDisplay", mappedBy="feedback", cascade={"persist"}, orphanRemoval=TRUE)
      */
     protected $feedbackDisplays;
 

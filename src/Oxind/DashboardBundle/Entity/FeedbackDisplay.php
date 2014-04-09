@@ -14,5 +14,13 @@ use Oxind\FeedbackBundle\Entity\FeedbackDisplay as BaseFeedbackDisplay;
  */
 class FeedbackDisplay extends BaseFeedbackDisplay
 {
-
+    /** 
+     * @ORM\ManyToOne(targetEntity="Timeline", inversedBy="feedbackDisplays")
+     */
+    protected $timeline;
+    
+    /** 
+     * @ORM\ManyToOne(targetEntity="Feedback", inversedBy="feedbackDisplays")
+     */
+    protected $feedback;
 }

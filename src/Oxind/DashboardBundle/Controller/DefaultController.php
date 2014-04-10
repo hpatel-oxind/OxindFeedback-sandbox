@@ -6,18 +6,17 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 
-
 /**
- * @Route("/")
+ * @Route("/feedback")
  */
 class DefaultController extends Controller
 {
 
     /**
-     * @Route("/", name="oxind_dashboard")
+     * @Route("/{feedbacktype_name}", name="oxind_dashboard", defaults={"feedbacktype_name" ="suggestion"} )
      * @Template()
      */
-    public function indexAction()
+    public function indexAction($feedbacktype_name)
     {
         $request = $this->get('request');
         $feedbackTypeManager = $this->get('oxind_feedback.manager.feedbacktype');

@@ -19,9 +19,16 @@ class DefaultController extends Controller
      */
     public function indexAction()
     {
+        $request = $this->get('request');
         $feedbackTypeManager = $this->get('oxind_feedback.manager.feedbacktype');
-        $feedbackType = $feedbackTypeManager->findFeedbackTypeBy(array( 'name' => 'suggestion' ));
-        return $this->render('OxindDashboardBundle:Default:index.html.twig', array('feedbacktype' => $feedbackType));
+        $feedbackType = $feedbackTypeManager->findFeedbackTypeBy(array('name' => $feedbacktype_name));
+        if ($feedbackType == null)
+        {
+            throw $this->createNotFoundException();
+        }
+
+        $feedbackTypes = $feedbackTypeManager->findAllFeedBackType(array('suggestion', 'issue'));
+        return $this->render('OxindDashboardBundle:Default:index.html.twig', array('feedbacktype' => $feedbackType, 'feedbackTypes' => $feedbackTypes));
     }
 
 }

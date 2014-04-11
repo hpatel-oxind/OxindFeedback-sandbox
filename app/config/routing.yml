@@ -3,7 +3,7 @@ oxind_dashboard:
     prefix:  /
 oxind_feedback:
     resource: "@OxindFeedbackBundle/Resources/config/routing.yml"
-    prefix:  /
+    prefix:  /feedback
 
 oxind_user:
     resource: "@OxindUserBundle/Resources/config/routing.yml"
@@ -50,5 +50,10 @@ soanata_user:
     prefix: /admin
     methods: GET|POST
 
-
+root:
+    path: /
+    defaults:
+        _controller: FrameworkBundle:Redirect:urlRedirect
+        path: /feedback
+        permanent: true
     

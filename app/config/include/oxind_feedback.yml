@@ -1,5 +1,6 @@
 oxind_feedback:
     db_driver: orm
+    feedback_per_page : 1
     user_class: Oxind\UserBundle\Entity\User
     fixtures: Oxind/DashboardBundle/DataFixtures/Fixtures 
     class:

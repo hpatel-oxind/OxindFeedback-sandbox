@@ -21,10 +21,21 @@ class DefaultController extends Controller
         $request = $this->get('request');
         $feedbackTypeManager = $this->get('oxind_feedback.manager.feedbacktype');
         $feedbackType = $feedbackTypeManager->findFeedbackTypeBy(array('name' => $feedbacktype_name));        
-
-
+        
+        if(!$feedbackType)
+        {
+            throw $this->createNotFoundException('Feedback type doesn\'t exist');
+        }
+        
         $feedbackTypes = $feedbackTypeManager->findAllFeedBackType(array('suggestion', 'issue'));
         return $this->render('OxindDashboardBundle:Default:index.html.twig', array('feedbacktype' => $feedbackType, 'feedbackTypes' => $feedbackTypes));
     }
 
+    /**
+     * @Route("/timeline/show")
+     */
+    public function timelineAction()
+    {
+      return  $this->render('OxindDashboardBundle:Default:timeline.html.twig');
+    }
 }

@@ -16,38 +16,29 @@
         </div>
                 {% endblock %}
     </div>  
-
+ 
     <div class="container">
                 {% block feedbackcontent %}
-            <div class="row">
-                <div class="col-lg-8">
-                    <div class="col-lg-6"> {{ include ('OxindFeedbackBundle:Feedback:feedback_search_form.html.twig', { 'feedbacktype_id': feedbacktype.getId() } ) }}</div>
-                    <div class="col-lg-6">{% render (controller('OxindFeedbackBundle:Feedback:feedbackfilter' ,{'feedbacktype_id' : feedbacktype.getId() })) %}</div>
-                </div>
-                    <div class="col-lg-4">
-                        <div class="feedback-links"> 
+        <div class="row">
+                    <div class="col-lg-8">
+                    {% include 'OxindFeedbackBundle:Feedback:feedback_main.html.twig' %} 
+                    </div>
+            <div class="col-lg-4">
+                <div class="feedback-links"> 
 
-                            <div class="feedback-form-container">
-            {% for  val in   feedbackTypes%}               
-                                    <div>
-                                        
-                                            <a href="{{ path('oxind_dashboard',{'feedbacktype_name': val['name'] } ) }}">{{  val['name'] }}</a>            
-                                    </div>            
+                    <div class="feedback-form-container">
+            {% for  val in   feedbackTypes %}               
+                        <div>
+                            <a href="{{ path('oxind_dashboard',{'feedbacktype_name': val['name'] } ) }}">{{  val['name'] }}</a>            
+                        </div>            
             {% endfor %}
-                                </div>
-                            </div>
-                    </div>    
-            </div>
-
-                    <div class="row">
-                        <div class="col-lg-8">
-                {{ render(controller('OxindFeedbackBundle:Feedback:listFeedback', {'feedbacktype_id' : feedbacktype.getId() })) }}                    
-                            </div>
+                 {{ render(controller('OxindFeedbackBundle:Feedback:getFeedbackForm' , {'feedbacktype_id' : feedbacktype.getId() })) }}
+                    </div>
+                </div>
+            </div>   
+        </div>    
                 {% endblock %}
-                {% block feedbackform %}
-                            <div class="col-lg-4">   {{ render(controller('OxindFeedbackBundle:Feedback:getFeedbackForm' , {'feedbacktype_id' : feedbacktype.getId() })) }}</div>
-                        
-                {% endblock %}
+                
 </div>
                         </div>
 

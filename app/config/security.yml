@@ -63,6 +63,7 @@ security:
                 intention:                      authenticate
             logout:          
                 path: /logout
+                target: /
                 invalidate_session: false
             anonymous:          true
             security: true

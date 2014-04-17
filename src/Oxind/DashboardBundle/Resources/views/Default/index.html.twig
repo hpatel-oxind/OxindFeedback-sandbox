@@ -11,7 +11,9 @@
 {% endblock %}
     
 {% block timeline %}
+    <div class="row">
                 <div id="mytimeline"></div>
+    </div>
 {% endblock %}  
 {% block content %}
 
@@ -27,18 +29,21 @@
                 {% block signin %}
         <div class="col-lg-4 ">
             {% if app.user is not defined or app.user == null %}
-                New and returning users may <a href="{{ path('fos_user_security_login')}}" >Sign In</a>
+                <div class="userlink">
+                    New and returning users may <a href="{{ path('fos_user_security_login')}}" >Sign In</a>
+                </div>
             {% else %}
-                <a href="{{ path('fos_user_security_logout')}}">Logout</a>
+                <div class="userlink">
+                    <a href="{{ path('fos_user_security_logout')}}">Logout</a>
+                </div>
             {% endif %}
         </div>
                 {% endblock %}
     </div>  
  
-    <div class="">
+    <div class="row">
                 {% block feedbackcontent %}
-                    <div class="row">
-                        <div class="col-lg-8">
+                       <div class="col-lg-8">
                             <ul class="nav nav-tabs">
                                 {% for  val in   feedbackTypes %}
                                         <li {% if feedbacktype.getName() == val['name'] %} class="active" {% endif %}><a href="{{ path('oxind_dashboard',{'feedbacktype_name': val['name'] } ) }}">{{  val['name'] }}</a></li>
@@ -52,7 +57,7 @@
                             {{ render(controller('OxindFeedbackBundle:Feedback:getFeedbackForm' , {'feedbacktype_id' : feedbacktype.getId() })) }}
 
                          </div>   
-                    </div>    
+                 
                 {% endblock %}
     </div>
                         

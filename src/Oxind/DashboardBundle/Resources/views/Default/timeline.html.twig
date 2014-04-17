@@ -1,39 +1,21 @@
 {% extends "::layout.html.twig" %}
 
+{% block stylesheets %}
+        {{ parent() }}  
+        <link rel="stylesheet" type="text/css" href="{{ asset('bundles/OxindFeedback/css/timeline.css')}}">
+{% endblock %}
+
 {% block head_javascripts %} 
-{{ parent() }}
-<script src="http://api.simile-widgets.org/timeline/2.3.1/timeline-api.js?bundle=true" type="text/javascript"></script>              
+    {{ parent() }}  
+    <script type="text/javascript" src="{{ asset('bundles/OxindFeedback/js/timeline-min.js')}}"></script>
+    
 {% endblock %}
+
 {% block javascripts %}
-{{ parent() }}
-<script>
-    SimileAjax.History.enabled = false;
-      var tl;
-      $("document").ready(function(){
-        //var eventSource = new Timeline.DefaultEventSource();
-        var bandInfos = [
-     Timeline.createBandInfo({
-         width:          "70%", 
-         intervalUnit:   Timeline.DateTime.MONTH, 
-         intervalPixels: 100
-     }),
-     Timeline.createBandInfo({
-         width:          "30%", 
-         intervalUnit:   Timeline.DateTime.YEAR, 
-         intervalPixels: 200
-     })
-   ];
-   bandInfos[1].syncWith = 0;
-   bandInfos[1].highlight = true;
-   
-   tl = Timeline.create(document.getElementById("feedback-timeline"), bandInfos);
-      });
-      
-</script>
+    {{ parent() }}
+    {{  render(controller('OxindFeedbackBundle:Timeline:index' , {'divId' : 'mytimeline' })) }}
 {% endblock %}
-
-
 
 {% block content %}
-    <div id="feedback-timeline" ></div>
+    <div id="mytimeline"></div>
 {% endblock %}

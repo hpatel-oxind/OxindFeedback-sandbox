@@ -5,6 +5,7 @@ namespace Oxind\DashboardBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 
 /**
  * @Route("/feedback")
@@ -32,7 +33,8 @@ class DefaultController extends Controller
     }
 
     /**
-     * @Route("/timeline/show")
+     * @Route("/timeline/show", name="oxind_feedback_timneline_show")
+     * @Method({"GET"})
      */
     public function timelineAction()
     {

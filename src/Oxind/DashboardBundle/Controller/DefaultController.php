@@ -31,13 +31,4 @@ class DefaultController extends Controller
         $feedbackTypes = $feedbackTypeManager->findAllFeedBackType(array('suggestion', 'issue'));
         return $this->render('OxindDashboardBundle:Default:index.html.twig', array('feedbacktype' => $feedbackType, 'feedbackTypes' => $feedbackTypes));
     }
-
-    /**
-     * @Route("/timeline/show", name="oxind_feedback_timneline_show")
-     * @Method({"GET"})
-     */
-    public function timelineAction()
-    {
-      return  $this->render('OxindDashboardBundle:Default:timeline.html.twig');
-    }
 }
